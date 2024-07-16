@@ -13,7 +13,9 @@ enabled=1\n\
 gpgcheck=1\n" >> /etc/yum.repos.d/fedora-updates.repo
 
 # Comment out metalink
-RUN sed -i 's/^metalink/#metalink/' /etc/yum.repos.d/fedora-mirror.repo
+RUN sed -i 's/^metalink/#metalink/' /etc/yum.repos.d/fedora.repo
+RUN sed -i 's/^metalink/#metalink/' /etc/yum.repos.d/fedora-updates.repo
+
 
 # Sync distribution and install development tools
 RUN dnf -y distro-sync && \
